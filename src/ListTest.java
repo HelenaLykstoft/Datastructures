@@ -22,4 +22,8 @@ class ListTest {
         assertEquals("1",list1.printFromHead());
 
     }
+
+    @Test
+    void insertFromTail() {
+    }
 }

@@ -17,6 +17,18 @@ public class List {
         return head;
     }
 
+    Node insertFromTail(Node node){
+        if (isEmpty()){
+            head = node;
+            tail = node;
+            return tail;
+        }
+        node.prev = tail;
+        tail.prev = node;
+        tail = node;
+        return tail;
+    }
+
     boolean isEmpty(){
         return head == null && tail == null;
     }
@@ -34,12 +46,16 @@ public class List {
     }
 
 
-    public void printFromTail(Node n1) {
+    String printFromTail() {
 
-        while (n1 != null){
-            System.out.println(n1.data);
-            n1 = n1.prev;
+        StringBuilder stringBuilder = new StringBuilder();
+        Node n = tail;
+        while (n != null){
+            stringBuilder.append(n.data + " ");
+
+            n = n.prev;
         }
+        return stringBuilder.toString().trim();
     }
 
 }
