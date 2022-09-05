@@ -8,24 +8,22 @@ public class Main {
         Node node0 = new Node("0");
 
         // Makes the nodes connect to eachother
+        // Next
         node0.next = node1;
         node1.next = node2;
         node2.next = node3;
+        // Prev
         node3.prev = node2;
         node2.prev = node1;
         node1.prev = node0;
 
-        Node n = node0;
+        List list = new List();
+        list.head = node0;
+        list.tail = node3;
 
-        printFromHead(node0);
+        System.out.println(list.printFromHead());
+        list.printFromTail(list.tail);
 
     }
 
-    private static void printFromHead(Node n) {
-
-        while (n != null){
-            System.out.println(n.data);
-            n = n.next;
-        }
-    }
 }
