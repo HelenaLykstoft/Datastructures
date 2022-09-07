@@ -1,7 +1,13 @@
 public class List {
 
+
+    public List() {
+
+    }
+
     Node head = null;
     Node tail = null;
+
 
     Node insertFromHead(Node node){
         if (isEmpty()) {
@@ -24,9 +30,32 @@ public class List {
             return tail;
         }
         node.prev = tail;
-        tail.prev = node;
+        tail.next = node;
         tail = node;
         return tail;
+    }
+
+    public void removeFromHead(){
+        if (isEmpty()){
+            return;
+        }
+        if (head==tail){
+            head = null;
+            tail = null;
+            return;
+        }
+        head = head.next;
+        head.prev.next = null;
+        head.prev = null;
+    }
+
+    public void removeFromTail(){
+        if (isEmpty()){
+                return;
+        }
+        tail = tail.prev;
+        tail.next.prev = null;
+        tail.next = null;
     }
 
     boolean isEmpty(){
@@ -47,8 +76,8 @@ public class List {
 
 
     String printFromTail() {
-
         StringBuilder stringBuilder = new StringBuilder();
+        
         Node n = tail;
         while (n != null){
             stringBuilder.append(n.data + " ");

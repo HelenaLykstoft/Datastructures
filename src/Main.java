@@ -17,20 +17,8 @@ public class Main {
         //node2.prev = node1;
         //node1.prev = node0;
 
-        List list = new List();
+        //List list = new List();
 
-        list.insertFromHead(new Node("1"));
-        list.insertFromHead(new Node("2"));
-        list.insertFromHead(new Node("3"));
-
-        list.insertFromTail(new Node("4"));
-        list.insertFromTail(new Node("3"));
-        list.insertFromTail(new Node("2"));
-
-
-
-        System.out.println(list.printFromHead());
-        System.out.println(list.printFromTail());
 
     }
 
