@@ -106,7 +106,11 @@ public class List {
     }
 
     public Node insertFromTail(String s) {
-        return insertFromTail(new Node(s));
+        String [] strings = s.split(" ");
+        for (String string : strings){
+            insertFromTail(new Node(string));
+        }
+        return tail;
     }
 
 

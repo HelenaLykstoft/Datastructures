@@ -19,7 +19,15 @@ public class Main {
 
         //List list = new List();
 
+        // Den sætter virker ind som første plads, så sætter den det ind bag ved virker osv osv.
+        List list = new List("virker det her?");
+        System.out.println(list.printFromTail());
 
+        list.insertFromHead("Måske");
+        System.out.println(list.printFromTail());
+
+        list.insertFromTail("Test");
+        System.out.println(list.printFromHead());
     }
 
 }
