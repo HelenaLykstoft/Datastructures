@@ -26,4 +26,10 @@ class ListTest {
     @Test
     void insertFromTail() {
     }
+
+    @Test
+    void smartConstructor(){
+        List smartList = new List("hold da op det er smart");
+        assertEquals("hold da op det er smart", smartList.printFromTail());
+    }
 }

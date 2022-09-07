@@ -1,12 +1,18 @@
 public class List {
 
-
-    public List() {
-
-    }
-
     Node head = null;
     Node tail = null;
+
+    public List(String s) {
+        String [] strings = s.split(" ");
+        for (String string : strings) {
+            insertFromHead(new Node(string));
+        }
+    }
+
+    public List(){
+
+    }
 
 
     Node insertFromHead(Node node){
