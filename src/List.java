@@ -68,6 +68,10 @@ public class List {
         return head == null && tail == null;
     }
 
+    boolean onlyOne(){
+        return head == tail && head != null;
+    }
+
 
     String printFromHead() {
         StringBuilder stringBuilder = new StringBuilder();
@@ -92,6 +96,20 @@ public class List {
         }
         return stringBuilder.toString().trim();
     }
+
+    public Node insertFromHead(String s) {
+        String [] strings = s.split(" ");
+        for (String string : strings) {
+            insertFromHead(new Node(string));
+        }
+        return head;
+    }
+
+    public Node insertFromTail(String s) {
+        return insertFromTail(new Node(s));
+    }
+
+
 
 }
 

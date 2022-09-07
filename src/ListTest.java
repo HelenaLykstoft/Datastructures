@@ -32,4 +32,23 @@ class ListTest {
         List smartList = new List("hold da op det er smart");
         assertEquals("hold da op det er smart", smartList.printFromTail());
     }
+
+    @Test
+    void insertStringFromHead(){
+        list1.insertFromHead("hej");
+        assertEquals("hej",list1.printFromHead());
+    }
+
+    @Test
+    void insertStringFromTail(){
+        list1.insertFromTail("hej med");
+        assertEquals("hej med",list1.printFromTail());
+    }
+
+    @Test
+    void smartInsertFromHead(){
+        list1.insertFromHead("Hej med dig");
+        assertEquals(false, list1.onlyOne());
+        assertEquals("Hej med dig", list1.printFromTail());
+    }
 }
